@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>仮想運用の実績</title><style>
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>アカウント</title><style>
 *{box-sizing:border-box}
 body{font-family:system-ui,"Hiragino Sans",sans-serif;max-width:820px;margin:2rem auto;padding:0 1.2rem;line-height:1.75;color:#1a1a1a;background:#fafaf8}
 h1{font-size:1.6rem;margin-bottom:.25rem}
@@ -70,7 +70,175 @@ h2{font-size:1.05rem;margin-top:1.8rem;border-left:4px solid #2e7d52;padding-lef
 .disclaimer{color:#888;font-size:.8rem;border-top:1px solid #e0e0e0;margin-top:2.5rem;padding-top:1rem}
 a{color:#2e7d52}
 @media(max-width:600px){.entry-head{gap:.2rem .4rem}.form-row{gap:.1rem .5rem}}
-</style></head><body><div class=acct-bar><span class=acct-brand><a href='index.html'>重賞考察</a></span><span class=acct-nav><a href='account.html' id=nav-sub class=sub-cta>📩 月500円で買い目メール</a><a href='account.html' id=nav-account>ログイン / 登録</a></span></div><h1>仮想運用の実績</h1><p class=meta>当サイトの独自ロジックで対象レースの馬券を購入したと仮定した場合の、仮想的な収支の指標です。<strong>具体的な予想手法・買い目の作り方は非公開</strong>で、ここでは結果（回収率など）のみを掲載しています。過去レースの再現に基づく参考値であり、将来の的中・利益を保証するものではありません。</p><div class=results-total><h2>2026年 実績（重賞・仮想運用）</h2><table class=results-table><thead><tr><th>対象</th><th>投資額</th><th>払戻額</th><th>純益</th><th>回収率</th><th>的中率</th></tr></thead><tbody><tr><td style='text-align:left'>66レース</td><td>66,900円</td><td>106,490円</td><td><strong>+39,590円</strong></td><td><strong>159%</strong></td><td>30%</td></tr></tbody></table><p class=meta>1点100円換算。的中率は『いずれかの馬券が当たったレースの割合』。</p></div><h2>2026年 月別収支</h2><table class=results-table><thead><tr><th>月</th><th>投資額</th><th>払戻額</th><th>回収率</th></tr></thead><tbody><tr><td style='text-align:left'>2026-01</td><td>8,600円</td><td>400円</td><td>5%</td></tr><tr><td style='text-align:left'>2026-02</td><td>10,700円</td><td>1,080円</td><td>10%</td></tr><tr><td style='text-align:left'>2026-03</td><td>15,100円</td><td>4,970円</td><td>33%</td></tr><tr><td style='text-align:left'>2026-04</td><td>12,100円</td><td>4,190円</td><td>35%</td></tr><tr><td style='text-align:left'>2026-05</td><td>13,200円</td><td>83,550円</td><td>633%</td></tr><tr><td style='text-align:left'>2026-06</td><td>6,000円</td><td>12,300円</td><td>205%</td></tr><tr><td style='text-align:left'>2026-07</td><td>1,200円</td><td>0円</td><td>0%</td></tr></tbody></table><p class=meta>月ごとの波は大きく、利益は少数の高配当的中に集中します（高分散）。短期の増減ではなく年単位でご覧ください。</p><h2>年別 回収率（過去再現・参考）</h2><table class=results-table><thead><tr><th>年</th><th>回収率</th></tr></thead><tbody><tr><td style='text-align:left'>2021年</td><td><strong>172%</strong></td></tr><tr><td style='text-align:left'>2022年</td><td><strong>170%</strong></td></tr><tr><td style='text-align:left'>2023年</td><td><strong>116%</strong></td></tr><tr><td style='text-align:left'>2024年</td><td><strong>183%</strong></td></tr><tr><td style='text-align:left'>2025年</td><td><strong>124%</strong></td></tr><tr><td style='text-align:left'>2026年</td><td><strong>159%</strong></td></tr></tbody></table><p class=meta>過去レースの再現に基づく参考集計です。各年とも100%超で推移していますが、少数レースの高配当に依存するため年による振れがあります。</p><div class=results-total><p class=meta>※本ページは考察の結果指標であり、的中・利益を保証しません。馬券の購入はご自身の判断と責任で行ってください。</p></div><p class=disclaimer>本サイトは考察であり的中・利益を保証しません。馬券購入は自己責任で。</p><script>window.KEIBA_API="https://alone-toys-pencil-twice.trycloudflare.com";
+</style></head><body><div class=acct-bar><span class=acct-brand><a href='index.html'>重賞考察</a></span><span class=acct-nav><a href='account.html' id=nav-sub class=sub-cta>📩 月500円で買い目メール</a><a href='account.html' id=nav-account>ログイン / 登録</a></span></div>
+<h1>アカウント</h1>
+<div id=msg class=meta></div>
+
+<div id=guest style='display:none'>
+  <div class=bet-grid>
+  <div class='bet-panel acct-form'><h3>新規登録（無料）</h3>
+    <p class=meta>メールアドレスとパスワードだけで登録できます。</p>
+    <input id=reg-email type=email placeholder='メールアドレス' autocomplete=email>
+    <input id=reg-pw type=password placeholder='パスワード（8文字以上）' autocomplete=new-password>
+    <button class=buy-one onclick='doRegister()'>登録する</button>
+  </div>
+  <div class='bet-panel acct-form'><h3>ログイン</h3>
+    <input id=login-email type=email placeholder='メールアドレス' autocomplete=email>
+    <input id=login-pw type=password placeholder='パスワード' autocomplete=current-password>
+    <button class=buy-one onclick='doLogin()'>ログイン</button>
+    <p class=meta><a href='#' onclick='showForgot();return false'>パスワードをお忘れですか？</a></p>
+  </div>
+  </div>
+  <div id=forgot class='bet-panel acct-form' style='display:none;margin-top:1rem'>
+    <h3>パスワード再設定</h3>
+    <p class=meta>登録メールアドレスに再設定リンクを送ります（有効期限30分）。</p>
+    <input id=forgot-email type=email placeholder='メールアドレス' autocomplete=email>
+    <button class=buy-one onclick='doForgot()'>再設定メールを送る</button>
+  </div>
+  <div id=resetform class='bet-panel acct-form' style='display:none;margin-top:1rem'>
+    <h3>新しいパスワードを設定</h3>
+    <input id=reset-pw type=password placeholder='新しいパスワード（8文字以上）' autocomplete=new-password>
+    <input id=reset-pw2 type=password placeholder='新しいパスワード（確認）' autocomplete=new-password>
+    <button class=buy-one onclick='doReset()'>パスワードを更新する</button>
+  </div>
+</div>
+
+<div id=mypage style='display:none'>
+  <h2>マイページ</h2>
+  <p>ログイン中: <strong id=my-email></strong></p>
+  <div class=results-total>
+    <h3>買い目メール（月額サブスクリプション）</h3>
+    <p id=sub-status></p>
+    <button class=buy-one id=btn-sub onclick='doSubscribe()' style='display:none'>
+      月500円（月刊・当月号から）で毎週すべての買い目を受け取る</button>
+    <button class=buy-one id=btn-cancel onclick='doCancel()'
+      style='display:none;background:#8a2f2f'>解約する（いつでも・当月末まで有効）</button>
+    <p class=meta>月刊方式: 加入月は「当月号」として500円、以降は毎月1日に自動更新（500円/月）。<br>
+    決済はStripeの安全なページで行います。カード情報は当サイトに保存されません。<br>
+    解約はこのページからワンクリック。解約後も当月末まで配信が届きます（日割り返金なし）。</p>
+  </div>
+  <div class=results-total>
+    <h3>購入済みの記事（単品100円）</h3>
+    <ul id=purchases></ul>
+    <p class=meta>各記事ページの「100円で買い目をメールで受け取る」から購入できます。</p>
+  </div>
+  <p><button class=buy-one onclick='doLogout()' style='background:#666'>ログアウト</button></p>
+</div>
+
+<p class=meta><a href='tokushoho.html'>特定商取引法に基づく表記</a></p>
+
+<script>
+function show(id){document.getElementById('guest').style.display=(id==='guest')?'':'none';
+  document.getElementById('mypage').style.display=(id==='mypage')?'':'none';}
+function say(t,err){var m=document.getElementById('msg');m.textContent=t||'';
+  m.style.color=err?'#a33':'#2e7d52';}
+function refresh(){
+  var t=localStorage.getItem('keiba_token');
+  if(!t){show('guest');return;}
+  fetch(window.KEIBA_API+'/me',{headers:{'authorization':'Bearer '+t}})
+  .then(function(r){if(!r.ok)throw 0;return r.json();})
+  .then(function(me){
+    show('mypage');
+    document.getElementById('my-email').textContent=me.email;
+    var st=document.getElementById('sub-status');
+    document.getElementById('btn-sub').style.display=me.subscribed?'none':'';
+    document.getElementById('btn-cancel').style.display=me.subscribed?'':'none';
+    var m=new Date().getMonth()+1;
+    st.textContent=me.subscribed?('✅ 配信中（'+m+'月号）— 毎週の全買い目をメールでお届けします'):'未加入';
+    var ul=document.getElementById('purchases');ul.innerHTML='';
+    (me.purchases||[]).forEach(function(rid){
+      var li=document.createElement('li');
+      var a=document.createElement('a');a.href='race_'+rid+'.html';a.textContent=rid;
+      li.appendChild(a);ul.appendChild(li);});
+    if(!(me.purchases||[]).length){ul.innerHTML='<li class=meta>まだありません</li>';}
+  })
+  .catch(function(){localStorage.removeItem('keiba_token');show('guest');});
+}
+function doRegister(){
+  var e=document.getElementById('reg-email').value,p=document.getElementById('reg-pw').value;
+  fetch(window.KEIBA_API+'/register',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({email:e,password:p})})
+  .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j};});})
+  .then(function(res){if(!res.ok){say(res.j.detail||'登録に失敗しました',1);return;}
+    say('登録しました。そのままログインします...');
+    return fetch(window.KEIBA_API+'/login',{method:'POST',
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify({email:e,password:p})})
+      .then(function(r){return r.json();})
+      .then(function(j){if(j.token){localStorage.setItem('keiba_token',j.token);refresh();}});})
+  .catch(function(){say('通信エラー',1);});
+}
+function showForgot(){document.getElementById('forgot').style.display='';
+  var e=document.getElementById('login-email').value;
+  if(e)document.getElementById('forgot-email').value=e;}
+function doForgot(){
+  var e=document.getElementById('forgot-email').value;
+  fetch(window.KEIBA_API+'/password/forgot',{method:'POST',
+    headers:{'content-type':'application/json'},body:JSON.stringify({email:e})})
+  .then(function(r){return r.json();})
+  .then(function(j){say(j.message||'送信しました');})
+  .catch(function(){say('通信エラー',1);});
+}
+function doReset(){
+  var p=document.getElementById('reset-pw').value,
+      p2=document.getElementById('reset-pw2').value;
+  if(p!==p2){say('確認用パスワードが一致しません',1);return;}
+  var tok=new URLSearchParams(location.search).get('reset')||'';
+  fetch(window.KEIBA_API+'/password/reset',{method:'POST',
+    headers:{'content-type':'application/json'},
+    body:JSON.stringify({token:tok,new_password:p})})
+  .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j};});})
+  .then(function(res){
+    if(!res.ok){say(res.j.detail||'更新に失敗しました',1);return;}
+    say(res.j.message||'更新しました。新しいパスワードでログインしてください');
+    document.getElementById('resetform').style.display='none';
+    history.replaceState(null,'',location.pathname);
+  })
+  .catch(function(){say('通信エラー',1);});
+}
+function doLogin(){
+  var e=document.getElementById('login-email').value,p=document.getElementById('login-pw').value;
+  fetch(window.KEIBA_API+'/login',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({email:e,password:p})})
+  .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j};});})
+  .then(function(res){if(!res.ok){say((res.j.detail||'ログインに失敗しました')+
+      '　パスワードをお忘れの場合は下の再設定をご利用ください',1);showForgot();return;}
+    localStorage.setItem('keiba_token',res.j.token);say('');refresh();})
+  .catch(function(){say('通信エラー',1);});
+}
+function doLogout(){
+  var t=localStorage.getItem('keiba_token');
+  if(t){fetch(window.KEIBA_API+'/logout',{method:'POST',
+    headers:{'authorization':'Bearer '+t}});}
+  localStorage.removeItem('keiba_token');show('guest');say('ログアウトしました');
+}
+function doSubscribe(){
+  var t=localStorage.getItem('keiba_token');
+  fetch(window.KEIBA_API+'/checkout/subscription',{method:'POST',
+    headers:{'authorization':'Bearer '+t}})
+  .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j};});})
+  .then(function(res){if(res.ok&&res.j.url){location.href=res.j.url;}
+    else{say(res.j.detail||'エラー',1);}})
+  .catch(function(){say('通信エラー',1);});
+}
+function doCancel(){
+  if(!confirm('サブスクリプションを解約しますか？（当月末まで配信は継続します）'))return;
+  var t=localStorage.getItem('keiba_token');
+  fetch(window.KEIBA_API+'/subscription/cancel',{method:'POST',
+    headers:{'authorization':'Bearer '+t}})
+  .then(function(r){return r.json();})
+  .then(function(j){say(j.note||'解約を受け付けました');refresh();})
+  .catch(function(){say('通信エラー',1);});
+}
+(function(){
+  var tok=new URLSearchParams(location.search).get('reset');
+  if(tok){document.getElementById('resetform').style.display='';
+    say('新しいパスワードを設定してください');}
+})();
+document.addEventListener('DOMContentLoaded',refresh);
+refresh();
+</script>
+<p class=disclaimer>本サイトは考察であり的中・利益を保証しません。馬券購入は自己責任で。</p><script>window.KEIBA_API="https://alone-toys-pencil-twice.trycloudflare.com";
 
 function keibaResend(btn){
   var t=localStorage.getItem('keiba_token');
